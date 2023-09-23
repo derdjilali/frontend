@@ -13,6 +13,10 @@ module.exports = {
           200: '#1A1A1A',
         },
       },
+      backgroundImage: {
+        'archive': "url('/src/assets/img/bg-archive.png')",
+        'archive2': "url('/src/assets/img/bg-archive.svg')",
+      },
       keyframes: {
         slideToLeft: {
           '0%': {

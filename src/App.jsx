@@ -1,7 +1,7 @@
 import About from "./components/sections/About";
 import Build from "./components/sections/Build";
 import Contact from "./components/sections/Contact";
-import Service from "./components/sections/Service";
+import Archive from "./components/sections/Archive";
 import Client from "./components/sections/Client";
 import NavBar from './layout/NavBar'
 import { ChakraProvider } from '@chakra-ui/react'
@@ -71,11 +71,7 @@ function App() {
 
         <About />
 
-        {/* <div id='services'></div> */}
-
-        {/* <img src={ Images.Line2 } alt="" className="my-20 m-auto"/> */}
-
-        {/* <Service /> */}
+        <Archive />
 
         {/* <div id='portfolio'></div> */}
 

@@ -1,6 +1,6 @@
 // import axios from 'axios'
 // import fileDownload from 'js-file-download'
-import Button from "../components/ui/Button";
+import Button from "../components/ui/CustomButton";
 import { useEffect, useState } from 'react';
 import { Switch } from '@chakra-ui/react'
 import AOS from 'aos';
