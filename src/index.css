@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* font-family: 'Fira Code', monospace;
+font-family: 'Inter', sans-serif; */
+@font-face {
+  font-family: 'Signboard';
+  src: url('./assets/fonts/Signboard.ttf') format('truetype');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.responsive {
+  @apply container mx-auto px-4 sm:px-14 md:px-0 xl:px-48 
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  color: #1a1a1a;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  /* background-color: #1A1A1A;; */
+  /* background-color: white; */
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 16px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  
+  background: white;
+  /* background-color: #0a192f; */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #505050;
+  border-radius: 100vh;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  width: 15px;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 15px;
+  cursor: none;
+  background: transparent;
+  border-radius: 100%;
+}
+
+.font-signboard {
+  font-family: 'Signboard', fallbackFont1, fallbackFont2;
+}
+
+.typewriter span:first-of-type{
+  color:white;
+}
