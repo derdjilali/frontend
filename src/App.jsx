@@ -56,9 +56,9 @@ function App() {
   return (
     <ChakraProvider>
       <div className="App w-full overflow-hidden">
-        <div className='fixed top-0 w-full text-center mt-[70px] z-50 bg-black text-white'>
+        {/* <div className='fixed top-0 w-full text-center z-50 bg-black text-white'>
           VERSION BETA v1.0.0 - UNDER DEVELOPMENT
-        </div>
+        </div> */}
 
         {/* <NavBar click={handleThemeSwitch} />
         <NavBarMob click={handleThemeSwitch} /> */}
@@ -69,7 +69,7 @@ function App() {
 
         {/* <img src={ Images.Line1 } alt="" className="my-20 m-auto"/> */}
 
-        {/* <About /> */}
+        <About />
 
         {/* <div id='services'></div> */}
 
