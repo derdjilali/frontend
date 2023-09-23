@@ -8,6 +8,7 @@ module.exports = {
         primary: {
           400: '#995F12',
           500: '#FF7F0B',
+          600: '#F5831F',
         },
         secondary: {
           200: '#1A1A1A',
@@ -16,6 +17,7 @@ module.exports = {
       backgroundImage: {
         'archive': "url('/src/assets/img/bg-archive.png')",
         'archive2': "url('/src/assets/img/bg-archive.svg')",
+        'artist': "url('/src/assets/img/bg-artist.jpeg')",
       },
       keyframes: {
         slideToLeft: {

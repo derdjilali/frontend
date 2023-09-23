@@ -11,6 +11,7 @@ import {
 import Header from "./components/sections/Header";
 import { useEffect, useState } from "react";
 import NavBarMob from "./layout/NavBarMob";
+import Artist from "./components/sections/Artist";
 
 function App() {
   const [theme, setTheme] = useState('light')
@@ -73,6 +74,7 @@ function App() {
 
         <Archive />
 
+        <Artist/>
         {/* <div id='portfolio'></div> */}
 
         {/* <img src={ Images.Line2 } alt="" className="my-20 m-auto"/> */}
