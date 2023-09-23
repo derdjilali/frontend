@@ -19,7 +19,7 @@ const Artist = () => {
             </div>
             <div className='grid grid-cols-3 gap-x-6 gap-y-8'>
                 {
-                    artist.slice(0, !more ? 3 : artist.length).map((idx, item) => 
+                    artist.slice(0, !more ? 3 : artist.length).map((item, idx) => 
                         <CardArtist key={idx} item={item}/>
                     )
                 }

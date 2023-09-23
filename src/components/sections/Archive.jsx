@@ -18,8 +18,8 @@ const Archive = () => {
             </div>
             <div className='grid grid-cols-3 gap-x-6 gap-y-8'>
                 {
-                    movies.slice(0, !more ? 3 : movies.length).map(item => 
-                        <CardImg css={'h-[400px]'}>
+                    movies.slice(0, !more ? 3 : movies.length).map((item, idx) => 
+                        <CardImg key={idx} css={'h-[400px]'}>
                             <img src={require(`../../assets/img/${item.image}`)} className='w-full h-full object-cover' alt={item.title} />
                         </CardImg>    
                     )
