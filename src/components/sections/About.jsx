@@ -26,14 +26,14 @@ const About = () => {
                 </p>
                 <div className='h-1 border-t-2 rounded-full mt-8 border-primary-500 w-1/3'></div>
             </div>
-            <div className='w-fit mt-6 md:mt-0 flex items-center'>
-                <CardImg css={'h-[180px] w-[120px]'}>
+            <div className='w-fit mt-6 md:mt-0 flex items-end'>
+                <CardImg css={'h-[190px] w-[140px] mb-4'}>
                     <img src={require('../../assets/img/img1.jpg')} className='h-full w-full object-cover' alt="" />
                 </CardImg>
-                <CardImg css={'h-[250px] w-[180px] mx-2'}>
+                <CardImg css={'h-[280px] w-[200px] mx-2'}>
                     <img src={require('../../assets/img/img2.jpg')} className='h-full w-full object-cover' alt="" />
                 </CardImg>
-                <CardImg css={'h-[180px] w-[120px]'}>
+                <CardImg css={'h-[190px] w-[140px] mb-4'}>
                     <img src={require('../../assets/img/img3.jpg')} className='h-full w-full object-cover' alt="" />
                 </CardImg>
             </div>

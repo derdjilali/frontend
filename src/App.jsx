@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import NavBarMob from "./layout/NavBarMob";
 import Artist from "./components/sections/Artist";
 import News from "./components/sections/News";
+import Footer from "./layout/Footer";
 
 function App() {
   const [theme, setTheme] = useState('light')
@@ -58,9 +59,9 @@ function App() {
   return (
     <ChakraProvider>
       <div className="App w-full overflow-hidden">
-        {/* <div className='fixed top-0 w-full text-center z-50 bg-black text-white'>
+        <div className='fixed top-0 w-full text-center z-50 bg-black text-white'>
           VERSION BETA v1.0.0 - UNDER DEVELOPMENT
-        </div> */}
+        </div>
 
         {/* <NavBar click={handleThemeSwitch} />
         <NavBarMob click={handleThemeSwitch} /> */}
@@ -79,15 +80,7 @@ function App() {
         
         <News/>
 
-        {/* <div id='portfolio'></div> */}
-
-        {/* <img src={ Images.Line2 } alt="" className="my-20 m-auto"/> */}
-        
-        {/* <Build /> */}
-        
-        {/* <div className="my-20"></div> */}
-
-        {/* <Contact /> */}
+        <Footer />
         
         {/* {scrollPosition > 100 && (
           <>

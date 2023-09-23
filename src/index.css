@@ -11,7 +11,7 @@ font-family: 'Inter', sans-serif; */
 @tailwind utilities;
 
 .responsive {
-  @apply container mx-auto px-4 sm:px-14 md:px-0 xl:px-48 
+  @apply container mx-auto px-4 sm:px-14 md:px-0 xl:px-28 
 }
 
 * {
