@@ -14,11 +14,16 @@ font-family: 'Inter', sans-serif; */
   @apply container mx-auto px-4 sm:px-14 md:px-0 xl:px-28 
 }
 
+@font-face {
+  font-family: 'ubuntu';
+  src: url('/src/assets/fonts/Ubuntu-Arabic_B.ttf') format('truetype');
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Ubuntu", "Helvetica", Arial, sans-serif;
+  font-family: 'ubuntu', Arial, sans-serif;
   color: #1a1a1a;
 }
 
