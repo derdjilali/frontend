@@ -19,7 +19,7 @@ const CardArtist = ({ item , handle}) => {
     };
 
     return (
-        <div className=' h-[450px] rounded-2xl border border-primary-600 px-6 py-4 relative'
+        <div className=' h-[450px] rounded-2xl border border-primary-600 px-6 py-4 relative overflow-hidden'
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
@@ -31,6 +31,7 @@ const CardArtist = ({ item , handle}) => {
                 backgroundPosition: 'center',
                 opacity: isHovered ? 1 : 0,
                 transition: 'opacity 0.5s ease',
+                filter: 'brightness(0.5)'
             }}
             ></div>
             <div className={`transition-all duration-500 ${isHovered ? 'transform translate-y-[280px]' : 'transform-none'}`}>

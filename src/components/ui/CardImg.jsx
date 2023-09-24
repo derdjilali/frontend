@@ -5,9 +5,9 @@ import {
     Icons
 } from '../../constants'
 
-const CardImg = ({ children, css }) => {
+const CardImg = ({ children, css, handle }) => {
     return (
-        <div className={`rounded-xl overflow-hidden ${css}`}>
+        <div className={`rounded-xl overflow-hidden ${css}`} onClick={handle}>
             {children}
         </div>
     )

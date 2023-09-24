@@ -12,10 +12,19 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 
 // import { EffectCoverflow, Pagination, Navigation } from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { EffectFade, Navigation, Pagination } from 'swiper/modules';
 
 const News = () => {
     const [selected, setSelected] = useState(null)
+
+    const swiperRef = useRef(null);
+
+    const handleButtonClick = (slideIndex) => {
+        if (swiperRef.current && swiperRef.current.swiper) {
+            setSelected(slideIndex)
+            swiperRef.current.swiper.slideTo(slideIndex);
+        }
+    };
 
     return (
         <div id='sec4' className='responsive flex flex-col justify-center items-center bg-News2 py-20 bg-news bg-cover bg-center relative'>
@@ -25,20 +34,28 @@ const News = () => {
             </div>
             <div className='w-[80%] z-40'>
                 <Swiper
-                    onSwiper={(s)=>setSelected(s)}
+                    ref={swiperRef}
+                    onSwiper={(s)=>setSelected(s.activeIndex)}
                     centeredSlides
-                    navigation
                     initialSlide={1}
                     slidesPerView={3}
                     spaceBetween={20}
-                    pagination={{ clickable: true }}
+                    navigation={true}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    modules={[Navigation, Pagination]}
                     className="swiper-container"
+                    onSlideNextTransitionStart={()=>selected < movies.length  && handleButtonClick(selected + 1)}
+                    onSlidePrevTransitionStart={()=>selected > 0  && handleButtonClick(selected - 1)}
                 >
                     {
                         movies.map((item, idx) => {
                             return (
                                 <SwiperSlide key={idx}>
-                                    <CardImg item={item} css={selected && selected.activeIndex === idx ? 'h-[400px]' : 'mt-20 mx-auto brightness-[0.3] w-[200px] h-[280px] mb-8'}>
+                                    <CardImg
+                                        handle = {()=>handleButtonClick(idx)}
+                                        item={item} css={selected!== null && selected === idx ? 'h-[400px]' : 'mt-20 mx-auto brightness-[0.3] w-[200px] h-[280px] mb-8'}>
                                         <img src={require(`../../assets/img/${item.image}`)} className='w-full h-full object-cover' alt={item.title} />
                                     </CardImg>
                                 </SwiperSlide>
