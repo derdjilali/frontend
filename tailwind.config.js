@@ -18,6 +18,7 @@ module.exports = {
         'archive': "url('/src/assets/img/bg-archive.jpg')",
         'artist': "url('/src/assets/img/bg-artist.jpeg')",
         'news': "url('/src/assets/img/bg-news.png')",
+        'alger': "url('/src/assets/img/alger.jpeg')",
       },
       keyframes: {
         slideToLeft: {

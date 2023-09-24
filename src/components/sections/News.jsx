@@ -63,7 +63,7 @@ const News = () => {
                         clickable: true,
                     }}
                     modules={[Navigation, Pagination]}
-                    className="swiper-container"
+                    className="swiper-container news"
                     onSlideNextTransitionStart={()=>selected < movies.length  && handleButtonClick(selected + 1)}
                     onSlidePrevTransitionStart={()=>selected > 0  && handleButtonClick(selected - 1)}
                 >
@@ -94,6 +94,17 @@ const News = () => {
                     </ModalHeader>
                 <ModalCloseButton />
                     <ModalBody>
+                        <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+                            <SwiperSlide>
+                                <img src={require('../../assets/img/img1.jpg')} alt="" className='w-full h-[200px] object-cover rounded-lg mb-4'/>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <img src={require('../../assets/img/img1.jpg')} alt="" className='w-full h-[200px] object-cover rounded-lg mb-4'/>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                                <img src={require('../../assets/img/img1.jpg')} alt="" className='w-full h-[200px] object-cover rounded-lg mb-4'/>
+                            </SwiperSlide>
+                        </Swiper>
                         <h1 className='font-bold text-2xl mb-4'>رحل الفنان الجزائري الشهير محمد حلمي</h1>
                         <p className='font-light text-sm mb-6'>تاريخ: 24-09-2023</p>
                         <div className='border-t-2 rounded-full border-gray-300 w-[200px] mb-4'></div>

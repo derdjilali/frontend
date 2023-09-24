@@ -69,14 +69,14 @@ input[type="range"]::-webkit-slider-thumb {
   color:white;
 }
 
-.swiper-button-next {
+.news .swiper-button-next {
   color: #FF7F0B;
   left: 220px !important;
   /* Add additional styles as needed */
 }
 
 /* Custom styles for the previous button */
-.swiper-button-prev {
+.news .swiper-button-prev {
   color: #FF7F0B;
   right: 220px !important;
   /* Add additional styles as needed */

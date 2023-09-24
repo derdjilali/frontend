@@ -15,9 +15,12 @@ import Footer from "./layout/Footer";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ArchiveSearch from "./pages/ArchiveSearch";
 import Home from "./pages/Home";
+import NavBar2 from "./layout/NavBar2";
 
 function App() {
-  
+    const path = window.location.pathname
+
+
   return (
     <ChakraProvider>
       <div className="App w-full overflow-hidden">
@@ -25,8 +28,6 @@ function App() {
           VERSION BETA v1.0.0 - UNDER DEVELOPMENT
         </div>
 
-        <NavBar />
-        
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />

@@ -15,6 +15,7 @@ import {
     useDisclosure
 } from '@chakra-ui/react'
 import CustomButton from '../components/ui/CustomButton'
+import NavBar2 from '../layout/NavBar2'
 
 const ArchiveSearch = () => {
     const [selected, setSelected]= useState(-1)
@@ -30,26 +31,38 @@ const ArchiveSearch = () => {
 
     const [active, setActive] = useState(1)
 
-    return (
-        <div className='responsive bg-archive object-cover'>
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
-            <div className='pt-32 mb-10 flex flex-col md:flex-row items-center justify-between md:w-2/3 md:mx-auto w-full'>
-                <div onClick={()=>setActive(1)} className={`mb-2 md:mb-0 md:w-[31%] justify-center rounded-lg flex items-center ${active === 1 ? 'bg-primary-400' : 'cursor-pointer bg-primary-600'} py-2`}>
+    return (
+        <div className='responsive relative bg-alger bg-cover'>
+            <NavBar2/>
+            <div className='absolute top-0 left-0 bottom-0 right-0 bg-[#F4C285] bg-opacity-60'></div>
+            
+            <div className='pt-32 z-30 relative w-full mb-10 md:w-2/3 mx-auto'>
+                <button className='bg-[#53391C] text-white rounded-lg absolute left-4 bottom-2 px-3'>بحث</button>
+                <input type="text" className='rounded-md border-2 border-[#53391C] w-full h-[40px] bg-transparent'/>
+            </div>
+
+            <div className='relative z-30 mb-10 flex flex-col md:flex-row items-center justify-between md:w-2/3 md:mx-auto w-full'>
+                
+                <div onClick={()=>setActive(1)} className={`mb-2 md:mb-0 md:w-[31%] justify-center rounded-lg flex items-center ${active === 1 ? 'bg-[#53391C]' : 'cursor-pointer bg-[#C98E4B]'} py-2`}>
                     <img src={IcVideo } alt="" className='w-6 ml-2'/>
                     <p className='text-white font-semibold'>الافلام التاريخية</p>
                 </div>
-                <div onClick={()=>setActive(2)} className={`mb-2 md:mb-0 md:w-[31%] justify-center rounded-lg flex items-center ${active === 2 ? 'bg-primary-400' : 'cursor-pointer bg-primary-600'} py-2`}>
+                <div onClick={()=>setActive(2)} className={`mb-2 md:mb-0 md:w-[31%] justify-center rounded-lg flex items-center ${active === 2 ? 'bg-[#53391C]' : 'cursor-pointer bg-[#C98E4B]'} py-2`}>
                     <img src={IcVideo } alt="" className='w-6 ml-2'/>
                     <p className='text-white font-semibold'>الافلام الدرامية</p>
                 </div>
-                <div onClick={()=>setActive(3)} className={`mb-2 md:mb-0 md:w-[31%] justify-center rounded-lg flex items-center ${active === 3 ? 'bg-primary-400' : 'cursor-pointer bg-primary-600'} py-2`}>
+                <div onClick={()=>setActive(3)} className={`mb-2 md:mb-0 md:w-[31%] justify-center rounded-lg flex items-center ${active === 3 ? 'bg-[#53391C]' : 'cursor-pointer bg-[#C98E4B]'} py-2`}>
                     <img src={IcVideo } alt="" className='w-6 ml-2'/>
                     <p className='text-white font-semibold'>الافلام الفكاهية</p>
                 </div>
             </div>
             
             <div>
-                <h1 className='text-3xl font-bold text-center text-white'>
+                <h1 className='relative z-30 text-3xl font-bold text-center text-white'>
                     {active === 1 && 'الافلام التاريخية'}
                     {active === 2 && 'الافلام الدرامية'}
                     {active === 3 && 'الافلام الفكاهية'}
@@ -65,7 +78,7 @@ const ArchiveSearch = () => {
                 }
             </div>
 
-            <div className='mx-auto pb-32 flex items-center justify-center'>
+            <div className='relative z-30 mx-auto pb-32 flex items-center justify-center'>
                 <CustomButton title={'1'} css={'px-5 py-3 text-sm mt-10 mx-2'} handleBtn={()=>setMore(movies.length)}/>
                 <CustomButton title={'2'} css={'px-5 py-3 text-sm mt-10 mx-2'} handleBtn={()=>setMore(6)}/>
                 <CustomButton title={'3'} css={'px-5 py-3 text-sm mt-10 mx-2'} handleBtn={()=>setMore(3)}/>
