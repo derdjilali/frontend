@@ -12,7 +12,7 @@ const Artist = () => {
     }
 
     return (
-        <div className='responsive flex flex-col justify-center items-center bg-Artist2 py-20 bg-artist bg-cover bg-center relative'>
+        <div id='sec3' className='responsive flex flex-col justify-center items-center bg-Artist2 py-20 bg-artist bg-cover bg-center relative'>
             <div className="w-fit flex flex-col items-center mb-14">
                 <h1 className='text-2xl md:text-5xl font-extrabold text-white mb-4' data-aos='fade-left' data-aos-once="true">سينمائيو الجزائر</h1>
                 <div className='border-t-2 border-primary-500 rounded-full w-1/3' data-aos='fade-right' data-aos-once="true"></div>

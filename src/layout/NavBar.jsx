@@ -16,23 +16,23 @@ const NavBar = () => {
                 <img src={ Logo} alt="" className="w-[100px]" data-aos='fade-out' data-aos-once="true"/>
                 <ul className="md:flex text-sm hidden">
                     <li data-aos='zoom-in' data-aos-once="true" className="px-4 py-2 cursor-pointer hover:text-primary-200 hidden lg:flex items-center transition duration-300 ease-in text-white">
-                        <a href="#home">
-                            Home
+                        <a href="#sec1">
+                            نبذه عن المنصه
                         </a>
                     </li>
                     <li data-aos='zoom-in' data-aos-once="true" className="px-4 py-2 cursor-pointer hover:text-primary-200 hidden lg:flex items-center transition duration-300 ease-in text-white">
-                        <a href="#about">
-                            About
+                        <a href="#sec2">
+                            ارشيف سينما الجزائر
                         </a>
                     </li>
                     <li data-aos='zoom-in' data-aos-once="true" className="px-4 py-2 cursor-pointer hover:text-primary-200 hidden lg:flex items-center transition duration-300 ease-in text-white">
-                        <a href="#services">
-                            Services
+                        <a href="#sec3">
+                            سينمائيو الجزائر
                         </a>
                     </li>
                     <li data-aos='zoom-in' data-aos-once="true" className="px-4 py-2 cursor-pointer hover:text-primary-200 hidden lg:flex items-center transition duration-300 ease-in text-white">
-                        <a href="#portfolio">
-                            Portfolio
+                        <a href="#sec4">
+                            اخر المستجدات
                         </a>
                     </li>
                 </ul>
