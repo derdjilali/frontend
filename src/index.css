@@ -81,3 +81,7 @@ input[type="range"]::-webkit-slider-thumb {
   right: 220px !important;
   /* Add additional styles as needed */
 }
+
+.title {
+  font-family: "ITC Handel Gothic Arabic Bold", Arial, sans-serif;
+}

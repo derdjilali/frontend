@@ -12,9 +12,9 @@ function App() {
   return (
     <ChakraProvider>
       <div className="App w-full overflow-hidden">
-        {/* <div className='fixed top-0 w-full text-center z-50 bg-black text-white'>
+        <div className='fixed top-0 w-full text-center bg-black text-white z-[100]'>
           VERSION BETA v1.0.0 - UNDER DEVELOPMENT
-        </div> */}
+        </div>
 
         <Router>
           <Routes>

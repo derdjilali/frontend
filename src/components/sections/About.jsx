@@ -10,15 +10,15 @@ const About = () => {
         <div id='sec1' className='flex flex-col md:flex-row items-center justify-between bg-primary-400 py-20'>
             <div className='responsive flex flex-col md:flex-row items-center justify-between'>
                 <div className='md:w-1/2 md:ml-10'>
-                    <h3 className='text-white text-lg font-bold mb-6 text-center md:text-right' data-aos='fade-down' data-aos-once="true">بك في "سينماتوغرافي": بوابتك إلى الترفيه الجزانري</h3>
+                    <h3 className='text-white text-lg font-bold mb-6 text-center md:text-right title' data-aos='fade-down' data-aos-once="true">مرحبا بك في "سينماتوغرافي": بوابتك إلى الترفيه الجزانري</h3>
                     <p className='text-white text-sm mb-4 text-center md:text-right' data-aos='fade-left' data-aos-once="true">
                         نرحب بك في "السينمائية" المنصة الرائدة للبث في الجزائر التي تأخذك
                         في رحلة مثيرة عبر نسيج غني من الثقافة والسينما والترفيه الجزائري
-                        اننمس في عالم جذاب يقدم لك محتوى جزائري رائع في مجالات السينما
-                        .والموسيقى والتلفزيون، وكل خلك بسهولة عند متناول يحيك
+                        انغمس في عالم جذاب يقدم لك محتوى جزائري رائع في مجالات السينما
+                        .والموسيقى والتلفزيون، وكل ذلك بسهولة عند متناول يحيك
                     </p>
                     <p className='text-white text-sm text-center md:text-right' data-aos='fade-left' data-aos-once="true">
-                        فىي "السينمائية" نلتزم بتقديم أفضل ما في إلتراث الثتقافي والفني الجزائري
+                        في "السينمائية" نلتزم بتقديم أفضل ما في التراث الثقافي والفني الجزائري
                         ٣ كنت من محبي الأفلام الجزائرية المثيرة أو الموسيقى الساحرة
                         أ البرامج التلفزيونية المشوقة، لدينا كل ما تحتاجه في مكان واحد، مصمم
                         .لتلبية احتياجات ترفيصك،

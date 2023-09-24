@@ -48,7 +48,7 @@ const News = () => {
         <div id='sec4' className='flex flex-col justify-center items-center bg-News2 pt-40 pb-80 bg-news bg-cover bg-center relative'>
             <div className='responsive flex flex-col justify-center items-center'>
                 <div className="w-fit flex flex-col items-center mb-14">
-                    <h1 className='text-5xl font-extrabold text-white mb-4' data-aos='fade-right' data-aos-once="true">اخر المستجدات</h1>
+                    <h1 className='text-5xl font-extrabold text-white mb-4 title' data-aos='fade-right' data-aos-once="true">اخر المستجدات</h1>
                     <div className='border-t-2 border-primary-500 rounded-full w-1/3' data-aos='fade-left' data-aos-once="true"></div>
                 </div>
                 

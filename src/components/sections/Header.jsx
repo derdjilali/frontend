@@ -26,9 +26,9 @@ const Header = () => {
             <video className="h-full object-cover w-full" ref={videoRef} src={require('../../assets/videos/intro.mp4')} autoPlay={true}></video>
             <div className="absolute top-0 left-0 bottom-0 right-0 flex items-center justify-center z-30">
                 <div className="cursor-pointer flex items-center" onClick={handlePlayVideo} disabled={isPlaying} data-aos='zoom-in' data-aos-once="true">
-                    <p className="text-white font-semibold text-3xl cursor-pointer">رؤية</p>
+                    <p className="text-white font-semibold text-3xl cursor-pointer title">رؤية</p>
                     <img src={IcPlay} alt=""  className="w-10 mx-3"/>
-                    <p className="text-white font-semibold text-3xl cursor-pointer">الملخص</p>
+                    <p className="text-white font-semibold text-3xl cursor-pointer title">الملخص</p>
                 </div>
             </div>
         </div>

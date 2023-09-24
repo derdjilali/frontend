@@ -36,7 +36,7 @@ const Artist = () => {
         <div id='sec3' className='flex flex-col justify-center items-center bg-Artist2 py-40 bg-artist bg-cover bg-center relative'>
             <div className='responsive flex flex-col justify-center items-center'>
                 <div className="w-fit flex flex-col items-center mb-14">
-                    <h1 className='text-2xl md:text-5xl font-extrabold text-white mb-4' data-aos='fade-left' data-aos-once="true">سينمائيو الجزائر</h1>
+                    <h1 className='text-2xl md:text-5xl font-extrabold text-white mb-4 title' data-aos='fade-left' data-aos-once="true">سينمائيو الجزائر</h1>
                     <div className='border-t-2 border-primary-500 rounded-full w-1/3' data-aos='fade-right' data-aos-once="true"></div>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-8'>
