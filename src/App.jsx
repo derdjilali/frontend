@@ -1,8 +1,5 @@
 import About from "./components/sections/About";
-import Build from "./components/sections/Build";
-import Contact from "./components/sections/Contact";
 import Archive from "./components/sections/Archive";
-import Client from "./components/sections/Client";
 import NavBar from './layout/NavBar'
 import { ChakraProvider } from '@chakra-ui/react'
 import {
@@ -63,14 +60,10 @@ function App() {
           VERSION BETA v1.0.0 - UNDER DEVELOPMENT
         </div>
 
-        {/* <NavBar click={handleThemeSwitch} />
-        <NavBarMob click={handleThemeSwitch} /> */}
+        <NavBar/>
+        {/* <NavBarMob click={handleThemeSwitch} /> */}
         
-        {/* <Header/> */}
-
-        {/* <Client/> */}
-
-        {/* <img src={ Images.Line1 } alt="" className="my-20 m-auto"/> */}
+        <Header/>
 
         <About />
 

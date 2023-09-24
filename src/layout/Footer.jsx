@@ -1,5 +1,5 @@
 import React from 'react'
-import ImgFooter from '../assets/img/logo-footer.svg'
+import ImgFooter from '../assets/logo/logo-footer.svg'
 import IcFb from '../assets/icons/ic-fb.svg'
 import IcInsta from '../assets/icons/ic-insta.svg'
 import IcLinkedin from '../assets/icons/ic-linkedin.svg'
@@ -38,7 +38,7 @@ const Footer = () => {
                     <li className='text-white text-sm font-extralight mb-'>test</li>
                 </ul>
             </div>
-            <div className='flex items-center col-span-2 justify-between'>
+            <div className='flex items-center col-span-2 justify-between mr-10'>
                 <div className='w-[40px] h-[40px] rounded-full flex items-center justify-center bg-[#272523]'>
                     <img src={IcFb} alt="" className='w-[25px]'/>
                 </div>

@@ -13,7 +13,7 @@ const News = () => {
     return (
         <div className='responsive flex flex-col justify-center items-center bg-News2 py-20 bg-news bg-cover bg-center relative'>
             <div className="w-fit flex flex-col items-center mb-14">
-                <h1 className='text-3xl font-bold text-white mb-4'>dskasjfk asjdfkjaskdfj f</h1>
+                <h1 className='text-5xl font-extrabold text-white mb-4'>اخر المستحدات</h1>
                 <div className='border-t-2 border-primary-500 rounded-full w-1/3'></div>
             </div>
             <div className='flex justify-center items-end'>

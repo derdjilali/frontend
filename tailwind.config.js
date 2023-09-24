@@ -15,8 +15,7 @@ module.exports = {
         },
       },
       backgroundImage: {
-        'archive': "url('/src/assets/img/bg-archive.png')",
-        'archive2': "url('/src/assets/img/bg-archive.svg')",
+        'archive': "url('/src/assets/img/bg-archive.jpg')",
         'artist': "url('/src/assets/img/bg-artist.jpeg')",
         'news': "url('/src/assets/img/bg-news.png')",
       },
