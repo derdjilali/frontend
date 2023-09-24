@@ -27,15 +27,20 @@ import { EffectFade, Navigation, Pagination } from 'swiper/modules';
 
 const News = () => {
     const [selected, setSelected] = useState(-1)
+    const [selectedOp, setSelectedOp] = useState(false)
 
     const swiperRef = useRef(null);
 
     const handleButtonClick = (slideIndex) => {
         setSelected(slideIndex)
         swiperRef.current.swiper.slideTo(slideIndex);
-        onOpen()
     };
 
+    const handle = (slideIndex) => {
+        setSelected(slideIndex)
+        swiperRef.current.swiper.slideTo(slideIndex);
+        onOpen()
+    };
     
     const { isOpen, onOpen, onClose } = useDisclosure()
     
@@ -67,7 +72,7 @@ const News = () => {
                             return (
                                 <SwiperSlide key={idx}>
                                     <CardImg
-                                        handle = {()=>handleButtonClick(idx)}
+                                        handle = {()=>handle(idx)}
                                         item={item} css={selected!== null && selected === idx ? 'h-[400px]' : 'mt-20 mx-auto brightness-[0.3] w-[200px] h-[280px] mb-8'}>
                                         <img src={require(`../../assets/img/${item.image}`)} className='w-full h-full object-cover' alt={item.title} />
                                     </CardImg>
