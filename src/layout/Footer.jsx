@@ -13,25 +13,25 @@ const Footer = () => {
             <div className='mb-6 md:mb-0 md:col-span-2 flex items-center mx-auto'>
                 <img src={ImgFooter} alt="" className='bg-cover w-[200px]'/>
             </div>
-            <div className='flex flex-col justify-center'>
-                <h4 className='text-center md:text-right mt-4 text-white font-medium text-lg mb-4'>titile</h4>
+            <div className='flex flex-col mt-10'>
+                <h4 className='text-center md:text-right mt-4 text-white font-medium text-lg mb-4'>اكتشق</h4>
                 <ul>
-                    <li className='text-center md:text-right text-white text-sm font-extralight mb-2'>test</li>
-                    <li className='text-center md:text-right text-white text-sm font-extralight mb-2'>test</li>
-                    <li className='text-center md:text-right text-white text-sm font-extralight mb-2'>test</li>
-                    <li className='text-center md:text-right text-white text-sm font-extralight mb-'>test</li>
+                    <li className='text-center md:text-right text-white text-sm font-extralight mb-2'>الشروط والأحكام</li>
+                    <li className='text-center md:text-right text-white text-sm font-extralight mb-2'>الخصوصيه</li>
+                    <li className='text-center md:text-right text-white text-sm font-extralight mb-2'>مساعدة</li>
+                    <li className='text-center md:text-right text-white text-sm font-extralight mb-2'>الثقة والأمان</li>
                 </ul>
             </div>
-            <div className='flex flex-col justify-center'>
-                <h4 className='text-center md:text-right mt-4 text-white font-medium text-lg mb-4'>titile</h4>
+            <div className='flex flex-col mt-10'>
+                <h4 className='text-center md:text-right mt-4 text-white font-medium text-lg mb-4'>المحتوى</h4>
                 <ul>
-                    <li className='text-center md:text-right text-white text-sm font-extralight mb-2'>test</li>
-                    <li className='text-center md:text-right text-white text-sm font-extralight mb-2'>test</li>
-                    <li className='text-center md:text-right text-white text-sm font-extralight mb-2'>test</li>
-                    <li className='text-center md:text-right text-white text-sm font-extralight mb-'>test</li>
+                    <li className='text-center md:text-right text-white text-sm font-extralight mb-2'>نبذه عن المنصه</li>
+                    <li className='text-center md:text-right text-white text-sm font-extralight mb-2'>سينماتوغرافي الجزائر</li>
+                    <li className='text-center md:text-right text-white text-sm font-extralight mb-2'>سينمائيون</li>
+                    <li className='text-center md:text-right text-white text-sm font-extralight mb-'>اخر المستجدات</li>
                 </ul>
             </div>
-            <div className='flex flex-col justify-center'>
+            <div className='flex flex-col mt-10'>
                 <h4 className='text-center md:text-right mt-4 text-white font-medium text-lg mb-4'>titile</h4>
                 <ul>
                     <li className='text-center md:text-right text-white text-sm font-extralight mb-2'>test</li>
