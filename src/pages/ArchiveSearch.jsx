@@ -47,15 +47,15 @@ const ArchiveSearch = () => {
 
             <div className='relative z-30 mb-10 flex flex-col md:flex-row items-center justify-between md:w-2/3 md:mx-auto w-full'>
                 
-                <div onClick={()=>setActive(1)} className={`mb-2 md:mb-0 md:w-[31%] justify-center rounded-lg flex items-center ${active === 1 ? 'bg-[#53391C]' : 'cursor-pointer bg-[#C98E4B]'} py-2`}>
+                <div onClick={()=>setActive(1)} className={`px-10 md:px-0 mb-2 md:mb-0 md:w-[31%] justify-center rounded-lg flex items-center ${active === 1 ? 'bg-[#53391C]' : 'cursor-pointer bg-[#C98E4B]'} py-2`}>
                     <img src={IcVideo } alt="" className='w-6 ml-2'/>
                     <p className='text-white font-semibold'>الافلام التاريخية</p>
                 </div>
-                <div onClick={()=>setActive(2)} className={`mb-2 md:mb-0 md:w-[31%] justify-center rounded-lg flex items-center ${active === 2 ? 'bg-[#53391C]' : 'cursor-pointer bg-[#C98E4B]'} py-2`}>
+                <div onClick={()=>setActive(2)} className={`px-10 md:px-0 mb-2 md:mb-0 md:w-[31%] justify-center rounded-lg flex items-center ${active === 2 ? 'bg-[#53391C]' : 'cursor-pointer bg-[#C98E4B]'} py-2`}>
                     <img src={IcVideo } alt="" className='w-6 ml-2'/>
                     <p className='text-white font-semibold'>الافلام الدرامية</p>
                 </div>
-                <div onClick={()=>setActive(3)} className={`mb-2 md:mb-0 md:w-[31%] justify-center rounded-lg flex items-center ${active === 3 ? 'bg-[#53391C]' : 'cursor-pointer bg-[#C98E4B]'} py-2`}>
+                <div onClick={()=>setActive(3)} className={`px-10 md:px-0 mb-2 md:mb-0 md:w-[31%] justify-center rounded-lg flex items-center ${active === 3 ? 'bg-[#53391C]' : 'cursor-pointer bg-[#C98E4B]'} py-2`}>
                     <img src={IcVideo } alt="" className='w-6 ml-2'/>
                     <p className='text-white font-semibold'>الافلام الفكاهية</p>
                 </div>

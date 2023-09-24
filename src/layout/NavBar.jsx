@@ -36,7 +36,7 @@ const NavBar = () => {
                         </a>
                     </li>
                 </ul>
-                <div className='w-[200px]'>
+                <div className='w-[200px] flex justify-end'>
                     <img src={ Logo2} alt="" className="w-[100px]" data-aos='fade-out' data-aos-once="true"/>
                 </div>
                 {/* <CustomButton title={`تسحيل الدخول`} css={'px-6 py-2 text-sm'}/> */}
