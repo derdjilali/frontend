@@ -14,7 +14,7 @@ const NavBar = () => {
             <div className="w-full responsive h-50 flex justify-between items-center py-4">
                 
                 <img src={ Logo} alt="" className="w-[100px]" data-aos='fade-out' data-aos-once="true"/>
-                <ul className="flex text-sm">
+                <ul className="md:flex text-sm hidden">
                     <li data-aos='zoom-in' data-aos-once="true" className="px-4 py-2 cursor-pointer hover:text-primary-200 hidden lg:flex items-center transition duration-300 ease-in text-white">
                         <a href="#home">
                             Home

@@ -9,49 +9,49 @@ import IcDown from '../assets/icons/ic-down.svg'
 
 const Footer = () => {
     return (
-        <div className='responsive bg-[#22201E] grid grid-cols-7 py-20'>
-            <div className='col-span-2 flex items-center'>
+        <div className='responsive bg-[#22201E] grid grid-cols-1 md:grid-cols-7 py-20'>
+            <div className='mb-6 md:mb-0 md:col-span-2 flex items-center mx-auto'>
                 <img src={ImgFooter} alt="" className='bg-cover w-[200px]'/>
             </div>
             <div className='flex flex-col justify-center'>
-                <h4 className='text-white font-medium text-lg mb-4'>titile</h4>
+                <h4 className='text-center md:text-right mt-4 text-white font-medium text-lg mb-4'>titile</h4>
                 <ul>
-                    <li className='text-white text-sm font-extralight mb-2'>test</li>
-                    <li className='text-white text-sm font-extralight mb-2'>test</li>
-                    <li className='text-white text-sm font-extralight mb-2'>test</li>
-                    <li className='text-white text-sm font-extralight mb-'>test</li>
+                    <li className='text-center md:text-right text-white text-sm font-extralight mb-2'>test</li>
+                    <li className='text-center md:text-right text-white text-sm font-extralight mb-2'>test</li>
+                    <li className='text-center md:text-right text-white text-sm font-extralight mb-2'>test</li>
+                    <li className='text-center md:text-right text-white text-sm font-extralight mb-'>test</li>
                 </ul>
             </div>
             <div className='flex flex-col justify-center'>
-                <h4 className='text-white font-medium text-lg mb-4'>titile</h4>
+                <h4 className='text-center md:text-right mt-4 text-white font-medium text-lg mb-4'>titile</h4>
                 <ul>
-                    <li className='text-white text-sm font-extralight mb-2'>test</li>
-                    <li className='text-white text-sm font-extralight mb-2'>test</li>
-                    <li className='text-white text-sm font-extralight mb-2'>test</li>
-                    <li className='text-white text-sm font-extralight mb-'>test</li>
+                    <li className='text-center md:text-right text-white text-sm font-extralight mb-2'>test</li>
+                    <li className='text-center md:text-right text-white text-sm font-extralight mb-2'>test</li>
+                    <li className='text-center md:text-right text-white text-sm font-extralight mb-2'>test</li>
+                    <li className='text-center md:text-right text-white text-sm font-extralight mb-'>test</li>
                 </ul>
             </div>
             <div className='flex flex-col justify-center'>
-                <h4 className='text-white font-medium text-lg mb-4'>titile</h4>
+                <h4 className='text-center md:text-right mt-4 text-white font-medium text-lg mb-4'>titile</h4>
                 <ul>
-                    <li className='text-white text-sm font-extralight mb-2'>test</li>
-                    <li className='text-white text-sm font-extralight mb-2'>test</li>
-                    <li className='text-white text-sm font-extralight mb-2'>test</li>
-                    <li className='text-white text-sm font-extralight mb-'>test</li>
+                    <li className='text-center md:text-right text-white text-sm font-extralight mb-2'>test</li>
+                    <li className='text-center md:text-right text-white text-sm font-extralight mb-2'>test</li>
+                    <li className='text-center md:text-right text-white text-sm font-extralight mb-2'>test</li>
+                    <li className='text-center md:text-right text-white text-sm font-extralight mb-'>test</li>
                 </ul>
             </div>
-            <div className='col-span-2 flex flex-col justify-center items-end'>
-                <div className='flex items-center w-full justify-end'>
-                    <div className='mr-4 w-[40px] h-[40px] rounded-full flex items-center justify-center bg-[#272523]'>
+            <div className='mt-6 md:mt-0 md:col-span-2 flex flex-col justify-center items-center md:items-end'>
+                <div className='flex items-center w-full justify-center md:justify-end'>
+                    <div className='mx-2 w-[40px] h-[40px] rounded-full flex items-center justify-center bg-[#272523]'>
                         <img src={IcFb} alt="" className='w-[25px]'/>
                     </div>
-                    <div className='mr-4 w-[40px] h-[40px] rounded-full flex items-center justify-center bg-[#272523]'>
+                    <div className='mx-2 w-[40px] h-[40px] rounded-full flex items-center justify-center bg-[#272523]'>
                         <img src={IcInsta} alt="" className='w-[25px]'/>
                     </div>
-                    <div className='mr-4 w-[40px] h-[40px] rounded-full flex items-center justify-center bg-[#272523]'>
+                    <div className='mx-2 w-[40px] h-[40px] rounded-full flex items-center justify-center bg-[#272523]'>
                         <img src={IcLinkedin} alt="" className='w-[25px]'/>
                     </div>
-                    <div className='mr-4 w-[40px] h-[40px] rounded-full flex items-center justify-center bg-[#272523]'>
+                    <div className='mx-2 w-[40px] h-[40px] rounded-full flex items-center justify-center bg-[#272523]'>
                         <img src={IcTwitter} alt="" className='w-[25px]'/>
                     </div>
                 </div>
