@@ -14,9 +14,10 @@ import {
     ModalCloseButton,
     useDisclosure
 } from '@chakra-ui/react'
+import { Movie } from '@mui/icons-material'
 
 const Artist = () => {
-    const [more, setMore] = useState(false)
+    const [more, setMore] = useState(6)
 
     const [selected, setSelected] = useState(-1)
 
@@ -39,7 +40,7 @@ const Artist = () => {
             </div>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-8'>
                 {
-                    artist.slice(0, !more ? 3 : artist.length).map((item, idx) => 
+                    artist.slice(0, more).map((item, idx) => 
                         <div key={idx} data-aos='zoom-in' data-aos-once="true">
                             <CardArtist key={idx} item={item} handle={()=>handle(idx)} />
                         </div>
@@ -47,7 +48,9 @@ const Artist = () => {
                 }
             </div>
             <div data-aos='fade-up' data-aos-once="true">
-                <CustomButton title={more ? 'اخفاء' : `عرض المزيد`} css={'px-20 py-3 text-sm mt-10'} handleBtn={handleButton}/>
+                <CustomButton title={'1'} css={'px-5 py-3 text-sm mt-10 mx-2'} handleBtn={()=>setMore(artist.length)}/>
+                <CustomButton title={'2'} css={'px-5 py-3 text-sm mt-10 mx-2'} handleBtn={()=>setMore(6)}/>
+                <CustomButton title={'3'} css={'px-5 py-3 text-sm mt-10 mx-2'} handleBtn={()=>setMore(3)}/>
             </div>
 
             <Modal isOpen={isOpen} onClose={onClose}>

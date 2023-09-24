@@ -11,21 +11,34 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 
+import {
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalFooter,
+    ModalBody,
+    ModalCloseButton,
+    useDisclosure
+} from '@chakra-ui/react'
+
 // import { EffectCoverflow, Pagination, Navigation } from 'swiper';
 import { EffectFade, Navigation, Pagination } from 'swiper/modules';
 
 const News = () => {
-    const [selected, setSelected] = useState(null)
+    const [selected, setSelected] = useState(-1)
 
     const swiperRef = useRef(null);
 
     const handleButtonClick = (slideIndex) => {
-        if (swiperRef.current && swiperRef.current.swiper) {
-            setSelected(slideIndex)
-            swiperRef.current.swiper.slideTo(slideIndex);
-        }
+        setSelected(slideIndex)
+        swiperRef.current.swiper.slideTo(slideIndex);
+        onOpen()
     };
 
+    
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    
     return (
         <div id='sec4' className='responsive flex flex-col justify-center items-center bg-News2 py-20 bg-news bg-cover bg-center relative'>
             <div className="w-fit flex flex-col items-center mb-14">
@@ -68,6 +81,21 @@ const News = () => {
                     {/* Add more SwiperSlide components as needed */}
                 </Swiper>
             </div>
+
+            <Modal isOpen={isOpen} onClose={onClose} size='xl'>
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalHeader>
+                    </ModalHeader>
+                <ModalCloseButton />
+                    <ModalBody>
+                        <h1 className='font-bold text-2xl mb-4'>رحل الفنان الجزائري الشهير محمد حلمي</h1>
+                        <p className='font-light text-sm mb-6'>تاريخ: 24-09-2023</p>
+                        <div className='border-t-2 rounded-full border-gray-300 w-[200px] mb-4'></div>
+                        <p className='mb-4 text-justify'>توفي أيقونة السينما الجزائرية محمد حلمي، اليوم الأربعاء 5 يناير 2022، عن عمر يناهز 90 عاما، بحسب التلفزيون الجزائري. ولد محمد حلمي، واسمه الحقيقي أمزيان براهيمي، في 15 فبراير 1931 بأزيفون بولاية تيزي وزو. في العاشرة من عمره، حضر محمد حلمي عرضه الأول، فرق تسد، وهو مسرحية لعب فيها حسن الحسني دور نعمة. في الثالثة عشرة من عمره، غادر قريته ليذهب إلى الجزائر العاصمة حيث حصل له طبيبه - الذي كان يعاني من التهاب العظم العصوي - على وظيفة ساعٍ في شركة تأمين. وفي الوقت نفسه، أخذ دورات بالمراسلة لمدة ثلاث سنوات. وفي عام 1947، طُلب منه دور في مسرحية ولد الليل. لم يمنحه باشيتارزي سوى أدوارًا صغيرة، ولهذا السبب انضم إلى رضا الفلكي في الراديو عام 1949. حتى أنه كتب مسرحية إذاعية لقناة القبائل وسيؤديها مع الشيخ نور الدين وعبد إسكر. وفي عام 1950 عاد إلى المسرح. بعد الاستقلال، قام بتأليف العديد من الرسومات باستخدام الأناشيد وبدأ في إخراج الأفلام التلفزيونية، والأفلام القصيرة والمتوسطة الطول: شكوني ياسباغ، الغموك، إيك-شيتا، ماتفاهمين، ليستيهلاك وخاصة ما بعد النفط (1986). وفي عام 1993، أخرج فيلمه الأول "الوليف الصعيب"، وأصدر على حسابه الخاص فيلما كوميديا ​​ساخرا بعنوان "الديمقراطية - السيرك أو صرخة الصمت". رحلة معجزة، سيرة ذاتية، وحاضر الماضي. وسيتم دفن الفقيد يوم الأربعاء بعد صلاة العصر بمقبرة سيدي أمحمد بالجزائر العاصمة.</p>
+                </ModalBody>
+                </ModalContent>
+            </Modal>
         </div>
     )
 }

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import movies from '../../data/movies.json'
-import CardImg from '../ui/CardImg'
-import CustomButton from '../ui/CustomButton'
+import movies from '../data/movies.json'
+import CardMovie from '../components/ui/CardMovie'
+import IcVideo from '../assets/icons/ic-video.svg'
+
 
 import {
     Modal,
@@ -13,17 +14,12 @@ import {
     ModalCloseButton,
     useDisclosure
 } from '@chakra-ui/react'
-import CardMovie from '../ui/CardMovie'
-import { Link } from 'react-router-dom'
+import CustomButton from '../components/ui/CustomButton'
 
-const Archive = () => {
-    const [more, setMore] = useState(false)
-
-    const handleButton = () => {
-        setMore(!more)
-    }
-
+const ArchiveSearch = () => {
     const [selected, setSelected]= useState(-1)
+
+    const [more, setMore] = useState(movies.length)
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     
@@ -32,32 +28,57 @@ const Archive = () => {
         onOpen()
     }
 
+    const [active, setActive] = useState(1)
+
     return (
-        <div id='sec2' className='responsive flex flex-col justify-center items-center bg-archive bg-center bg-cover py-20'>
-            <div className="w-fit flex flex-col items-center mb-14">
-                <h1 className='text-2xl md:text-5xl font-extrabold text-white mb-4' data-aos='fade-right' data-aos-once="true">ارشيف سينما الجزائر</h1>
-                <div className='border-t-2 border-primary-500 rounded-full w-1/3' data-aos='fade-left' data-aos-once="true"></div>
+        <div className='responsive bg-archive object-cover'>
+
+            <div className='pt-32 mb-10 flex flex-col md:flex-row items-center justify-between md:w-2/3 md:mx-auto w-full'>
+                <div onClick={()=>setActive(1)} className={`mb-2 md:mb-0 md:w-[31%] justify-center rounded-lg flex items-center ${active === 1 ? 'bg-primary-400' : 'cursor-pointer bg-primary-600'} py-2`}>
+                    <img src={IcVideo } alt="" className='w-6 ml-2'/>
+                    <p className='text-white font-semibold'>الافلام التاريخية</p>
+                </div>
+                <div onClick={()=>setActive(2)} className={`mb-2 md:mb-0 md:w-[31%] justify-center rounded-lg flex items-center ${active === 2 ? 'bg-primary-400' : 'cursor-pointer bg-primary-600'} py-2`}>
+                    <img src={IcVideo } alt="" className='w-6 ml-2'/>
+                    <p className='text-white font-semibold'>الافلام الدرامية</p>
+                </div>
+                <div onClick={()=>setActive(3)} className={`mb-2 md:mb-0 md:w-[31%] justify-center rounded-lg flex items-center ${active === 3 ? 'bg-primary-400' : 'cursor-pointer bg-primary-600'} py-2`}>
+                    <img src={IcVideo } alt="" className='w-6 ml-2'/>
+                    <p className='text-white font-semibold'>الافلام الفكاهية</p>
+                </div>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-8'>
+            
+            <div>
+                <h1 className='text-3xl font-bold text-center text-white'>
+                    {active === 1 && 'الافلام التاريخية'}
+                    {active === 2 && 'الافلام الدرامية'}
+                    {active === 3 && 'الافلام الفكاهية'}
+                </h1>
+                <div className='border-t-2 border-primary-500 rounded-full w-[200px] mt-2 mb-10 mx-auto'></div>
+            </div>
+
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-8 pb-14'>
                 {
-                    movies.slice(0, !more ? 3 : movies.length).map((item, idx) => 
-                        <CardMovie key={idx} item={item} handle={()=>handle(idx)} />
+                    movies.map((item, idx) => 
+                        Math.random() > 0.3 && <CardMovie key={idx} item={item} handle={()=>handle(idx)} />
                     )
                 }
             </div>
-            <div data-aos='fade-up' data-aos-once="true">
-                <Link to={'./movies'}>
-                    <CustomButton title={`عرض المزيد`} css={'px-20 py-3 text-sm mt-10'}/>
-                </Link>
+
+            <div className='mx-auto pb-32 flex items-center justify-center'>
+                <CustomButton title={'1'} css={'px-5 py-3 text-sm mt-10 mx-2'} handleBtn={()=>setMore(movies.length)}/>
+                <CustomButton title={'2'} css={'px-5 py-3 text-sm mt-10 mx-2'} handleBtn={()=>setMore(6)}/>
+                <CustomButton title={'3'} css={'px-5 py-3 text-sm mt-10 mx-2'} handleBtn={()=>setMore(3)}/>
             </div>
 
+            
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
                 <ModalContent>
                     <ModalHeader>
                         {selected > -1 &&
                             <div className='text-sm font-medium'>
-                                <img src={require('../../assets/img/' + movies[selected].image)} alt="" className='object-cover w-full h-[200px] rounded-lg mb-4 mt-4' />
+                                <img src={require('../assets/img/' + movies[selected].image)} alt="" className='object-cover w-full h-[200px] rounded-lg mb-4 mt-4' />
                                 <h2 className='text-2xl font-bold'>{movies[selected].title}</h2>
                                 <div className='flex item-center mt-6'>
                                     <p className='ml-2'>الاخراج:</p>
@@ -143,5 +164,4 @@ const Archive = () => {
     )
 }
 
-export default Archive
-
+export default ArchiveSearch
