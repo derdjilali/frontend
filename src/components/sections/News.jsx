@@ -50,7 +50,8 @@ const News = () => {
                 <h1 className='text-5xl font-extrabold text-white mb-4' data-aos='fade-right' data-aos-once="true">اخر المستجدات</h1>
                 <div className='border-t-2 border-primary-500 rounded-full w-1/3' data-aos='fade-left' data-aos-once="true"></div>
             </div>
-            <div className='w-[80%] z-40'>
+            
+            <div className='hidden md:block w-[80%] z-40'>
                 <Swiper
                     ref={swiperRef}
                     onSwiper={(s)=>setSelected(s.activeIndex)}
@@ -64,6 +65,41 @@ const News = () => {
                     }}
                     modules={[Navigation, Pagination]}
                     className="swiper-container news"
+                    onSlideNextTransitionStart={()=>selected < movies.length  && handleButtonClick(selected + 1)}
+                    onSlidePrevTransitionStart={()=>selected > 0  && handleButtonClick(selected - 1)}
+                >
+                    {
+                        movies.map((item, idx) => {
+                            return (
+                                <SwiperSlide key={idx}>
+                                    <CardImg
+                                        handle = {()=>handle(idx)}
+                                        item={item} css={selected!== null && selected === idx ? 'h-[400px]' : 'mt-20 mx-auto brightness-[0.3] w-[200px] h-[280px] mb-8'}>
+                                        <img src={require(`../../assets/img/${item.image}`)} className='w-full h-full object-cover' alt={item.title} />
+                                    </CardImg>
+                                </SwiperSlide>
+                            )}
+                        )
+                    }
+                    {/* <SwiperSlide>Movie 1</SwiperSlide>
+                    <SwiperSlide>Movie 2</SwiperSlide>
+                    <SwiperSlide>Movie 3</SwiperSlide> */}
+                    {/* Add more SwiperSlide components as needed */}
+                </Swiper>
+            </div>
+            
+            <div className='md:hidden w-[80%] z-40'>
+                <Swiper
+                    ref={swiperRef}
+                    onSwiper={(s)=>setSelected(s.activeIndex)}
+                    centeredSlides
+                    slidesPerView={1}
+                    navigation={true}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    modules={[Navigation, Pagination]}
+                    className="swiper-container"
                     onSlideNextTransitionStart={()=>selected < movies.length  && handleButtonClick(selected + 1)}
                     onSlidePrevTransitionStart={()=>selected > 0  && handleButtonClick(selected - 1)}
                 >
