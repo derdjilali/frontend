@@ -5,10 +5,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import IcPlay from '../../assets/icons/ic-play.svg'
 
-import {
-    Images, Icons
-} from '../../constants'
-// import Typed from 'react-typed';
 
 const Header = () => {
     useEffect(() => {

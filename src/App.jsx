@@ -1,21 +1,9 @@
-import About from "./components/sections/About";
-import Archive from "./components/sections/Archive";
-import NavBar from './layout/NavBar'
 import { ChakraProvider } from '@chakra-ui/react'
-import {
-    Images, Icons
-} from './constants'
-import Header from "./components/sections/Header";
-import { useEffect, useState } from "react";
-import NavBarMob from "./layout/NavBarMob";
-import Artist from "./components/sections/Artist";
-import News from "./components/sections/News";
 import Footer from "./layout/Footer";
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ArchiveSearch from "./pages/ArchiveSearch";
 import Home from "./pages/Home";
-import NavBar2 from "./layout/NavBar2";
 
 function App() {
     const path = window.location.pathname

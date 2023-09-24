@@ -33,24 +33,26 @@ const Artist = () => {
     }
 
     return (
-        <div id='sec3' className='responsive flex flex-col justify-center items-center bg-Artist2 py-20 bg-artist bg-cover bg-center relative'>
-            <div className="w-fit flex flex-col items-center mb-14">
-                <h1 className='text-2xl md:text-5xl font-extrabold text-white mb-4' data-aos='fade-left' data-aos-once="true">سينمائيو الجزائر</h1>
-                <div className='border-t-2 border-primary-500 rounded-full w-1/3' data-aos='fade-right' data-aos-once="true"></div>
-            </div>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-8'>
-                {
-                    artist.slice(0, more).map((item, idx) => 
-                        <div key={idx} data-aos='zoom-in' data-aos-once="true">
-                            <CardArtist key={idx} item={item} handle={()=>handle(idx)} />
-                        </div>
-                    )
-                }
-            </div>
-            <div data-aos='fade-up' data-aos-once="true">
-                <CustomButton title={'1'} css={'px-5 py-3 text-sm mt-10 mx-2'} handleBtn={()=>setMore(artist.length)}/>
-                <CustomButton title={'2'} css={'px-5 py-3 text-sm mt-10 mx-2'} handleBtn={()=>setMore(6)}/>
-                <CustomButton title={'3'} css={'px-5 py-3 text-sm mt-10 mx-2'} handleBtn={()=>setMore(3)}/>
+        <div id='sec3' className='flex flex-col justify-center items-center bg-Artist2 py-40 bg-artist bg-cover bg-center relative'>
+            <div className='responsive flex flex-col justify-center items-center'>
+                <div className="w-fit flex flex-col items-center mb-14">
+                    <h1 className='text-2xl md:text-5xl font-extrabold text-white mb-4' data-aos='fade-left' data-aos-once="true">سينمائيو الجزائر</h1>
+                    <div className='border-t-2 border-primary-500 rounded-full w-1/3' data-aos='fade-right' data-aos-once="true"></div>
+                </div>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-8'>
+                    {
+                        artist.slice(0, more).map((item, idx) => 
+                            <div key={idx} data-aos='zoom-in' data-aos-once="true">
+                                <CardArtist key={idx} item={item} handle={()=>handle(idx)} />
+                            </div>
+                        )
+                    }
+                </div>
+                <div data-aos='fade-up' data-aos-once="true">
+                    <CustomButton title={'1'} css={'px-5 py-3 text-sm mt-10 mx-2'} handleBtn={()=>setMore(artist.length)}/>
+                    <CustomButton title={'2'} css={'px-5 py-3 text-sm mt-10 mx-2'} handleBtn={()=>setMore(6)}/>
+                    <CustomButton title={'3'} css={'px-5 py-3 text-sm mt-10 mx-2'} handleBtn={()=>setMore(3)}/>
+                </div>
             </div>
 
             <Modal isOpen={isOpen} onClose={onClose}>

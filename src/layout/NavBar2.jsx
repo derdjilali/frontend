@@ -21,11 +21,7 @@ const NavBar2 = () => {
                     <img src={IcMenu} alt="" className='md:hidden w-6' />
                 </div>
                 <ul className="w-full md:flex text-sm hidden justify-start">
-                    <li data-aos='zoom-in' data-aos-once="true" className="px-4 py-2 cursor-pointer hover:text-primary-200 hidden lg:flex items-center transition duration-300 ease-in text-white">
-                        <Link to='/'>
-                            الرئيسية
-                        </Link>
-                    </li>
+                    <ItemNavBar title={'الرئيسية'} path='/'/>
                 </ul>
                 <div className='w-[200px] flex justify-end'>
                     <img src={ Logo2} alt="" className="w-[100px]" data-aos='fade-out' data-aos-once="true"/>
@@ -37,3 +33,31 @@ const NavBar2 = () => {
 }
  
 export default NavBar2;
+
+const ItemNavBar = ({ title, path }) => {
+    
+    const [isHovered, setIsHovered] = useState(false);
+
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+    };
+
+    return (
+        <li data-aos='zoom-in' data-aos-once="true" clasName='z-50'>
+            <Link to={path}>
+                <div className='mx-4'>
+                    <p className='text-white font-semibold cursor-pointer'
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}>
+                        {title}
+                    </p>
+                    <div className={`pt-2 border-b-2 border-primary-500 -left-[100px] transition-all duration-500 ${isHovered ? 'transform -translate-x-[100] opacity-100' : 'transform-none -translate-x-[100px] opacity-0'}`}></div>
+                </div>
+            </Link>
+        </li>
+    )
+}

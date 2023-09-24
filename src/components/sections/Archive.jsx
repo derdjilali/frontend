@@ -33,22 +33,24 @@ const Archive = () => {
     }
 
     return (
-        <div id='sec2' className='responsive flex flex-col justify-center items-center bg-archive bg-center bg-cover py-20'>
-            <div className="w-fit flex flex-col items-center mb-14">
-                <h1 className='text-2xl md:text-5xl font-extrabold text-white mb-4' data-aos='fade-right' data-aos-once="true">ارشيف سينما الجزائر</h1>
-                <div className='border-t-2 border-primary-500 rounded-full w-1/3' data-aos='fade-left' data-aos-once="true"></div>
-            </div>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-8'>
-                {
-                    movies.slice(0, !more ? 3 : movies.length).map((item, idx) => 
-                        <CardMovie key={idx} item={item} handle={()=>handle(idx)} />
-                    )
-                }
-            </div>
-            <div data-aos='fade-up' data-aos-once="true">
-                <Link to={'./movies'}>
-                    <CustomButton title={`عرض المزيد`} css={'px-20 py-3 text-sm mt-10'}/>
-                </Link>
+        <div id='sec2' className='flex flex-col justify-center items-center bg-archive bg-center bg-cover py-40'>
+            <div className='responsive flex flex-col justify-center items-center'>
+                <div className="w-fit flex flex-col items-center mb-14">
+                    <h1 className='text-2xl md:text-5xl font-extrabold text-white mb-4' data-aos='fade-right' data-aos-once="true">ارشيف سينما الجزائر</h1>
+                    <div className='border-t-2 border-primary-500 rounded-full w-1/3' data-aos='fade-left' data-aos-once="true"></div>
+                </div>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-8'>
+                    {
+                        movies.slice(0, !more ? 3 : movies.length).map((item, idx) => 
+                            <CardMovie key={idx} item={item} handle={()=>handle(idx)} />
+                        )
+                    }
+                </div>
+                <div data-aos='fade-up' data-aos-once="true">
+                    <Link to={'./movies'}>
+                        <CustomButton title={`عرض المزيد`} css={'px-20 py-3 text-sm mt-10'}/>
+                    </Link>
+                </div>
             </div>
 
             <Modal isOpen={isOpen} onClose={onClose}>
