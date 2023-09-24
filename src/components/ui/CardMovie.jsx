@@ -26,6 +26,7 @@ const CardMovie = ({ item, handle}) => {
             >
                 <div className={`absolute left-0 top-1/2 bottom-0 right-0 bg-gradient-to-t from-black to-transparent shadow-lg
                     transition-all duration-500 ${isHovered ? 'transform translate-y-[60px] opacity-0' : 'transform-none opacity-100'}`}></div>
+                <div className={`absolute left-0 top-1/2 bottom-0 right-0 bg-gradient-to-t from-black to-transparent shadow-lg`}></div>
                 <div className='absolute right-0 bottom-0 z-30 px-6 py-10'>
                     <h3 className={`text-2xl font-bold text-white mb-2 overflow-hidden transition-all duration-500 ${
                         isHovered ? 'transform translate-y-[-100px] opacity-0' : 'transform-none opacity-100'
