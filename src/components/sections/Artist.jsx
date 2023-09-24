@@ -4,11 +4,31 @@ import CardImg from '../ui/CardImg'
 import CustomButton from '../ui/CustomButton'
 import CardArtist from '../ui/CardArtist'
 
+import {
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalFooter,
+    ModalBody,
+    ModalCloseButton,
+    useDisclosure
+} from '@chakra-ui/react'
+
 const Artist = () => {
     const [more, setMore] = useState(false)
 
+    const [selected, setSelected] = useState(-1)
+
     const handleButton = () => {
         setMore(!more)
+    }
+
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    
+    const handle = (id) => {
+        setSelected(id)
+        onOpen()
     }
 
     return (
@@ -21,7 +41,7 @@ const Artist = () => {
                 {
                     artist.slice(0, !more ? 3 : artist.length).map((item, idx) => 
                         <div key={idx} data-aos='zoom-in' data-aos-once="true">
-                            <CardArtist key={idx} item={item}/>
+                            <CardArtist key={idx} item={item} handle={()=>handle(idx)} />
                         </div>
                     )
                 }
@@ -29,6 +49,24 @@ const Artist = () => {
             <div data-aos='fade-up' data-aos-once="true">
                 <CustomButton title={more ? 'اخفاء' : `عرض المزيد`} css={'px-20 py-3 text-sm mt-10'} handleBtn={handleButton}/>
             </div>
+
+            <Modal isOpen={isOpen} onClose={onClose}>
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalHeader>
+                        {selected > -1 &&
+                            <div className='text-sm font-medium'>
+                                <img src={require('../../assets/img/' + artist[selected].image)} alt="" className='object-cover w-full h-[400px] rounded-lg mb-4 mt-4' />
+                                <h2 className='text-2xl font-bold'>{artist[selected].name}</h2>
+                                <p className='mt-4'>{artist[selected].description}</p>
+                            </div>
+                            }
+                    </ModalHeader>
+                <ModalCloseButton />
+                <ModalBody>
+                </ModalBody>
+                </ModalContent>
+            </Modal>
         </div>
     )
 }

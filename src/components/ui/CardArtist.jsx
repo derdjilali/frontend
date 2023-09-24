@@ -7,7 +7,7 @@ import {
     Icons
 } from '../../constants'
 
-const CardArtist = ({ item }) => {
+const CardArtist = ({ item , handle}) => {
     const [isHovered, setIsHovered] = useState(false);
 
     const handleMouseEnter = () => {
@@ -34,7 +34,7 @@ const CardArtist = ({ item }) => {
             }}
             ></div>
             <div className={`transition-all duration-500 ${isHovered ? 'transform translate-y-[280px]' : 'transform-none'}`}>
-                <h3 className='font-semibold text-2xl mb-2 mt-20 text-white'>{item.name}</h3>
+                <h3 className='font-semibold text-2xl mb-2 mt-20 text-white cursor-pointer' onClick={handle}>{item.name}</h3>
                 <div className='border-t-2 rounded-full border-primary-500 w-[150px] mb-6'></div>
             </div>
             <p className={`text-sm text-white font-extralight text-justify transition-all duration-500 ${isHovered ? 'transform opacity-0' : 'transform-none opacity-100'}`}>
