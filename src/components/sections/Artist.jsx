@@ -34,6 +34,7 @@ const Artist = () => {
 
     return (
         <div id='sec3' className='flex flex-col justify-center items-center bg-Artist2 py-40 bg-artist bg-cover bg-center relative'>
+            <div className='absolute left-0 top-0 bottom-0 right-0 bg-black bg-opacity-25'></div>
             <div className='responsive flex flex-col justify-center items-center'>
                 <div className="w-fit flex flex-col items-center mb-14">
                     <h1 className='text-2xl md:text-5xl font-extrabold text-white mb-4 title' data-aos='fade-left' data-aos-once="true">سينمائيو الجزائر</h1>
