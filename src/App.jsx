@@ -4,17 +4,15 @@ import Footer from "./layout/Footer";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ArchiveSearch from "./pages/ArchiveSearch";
 import Home from "./pages/Home";
+import axios from 'axios';
+import { useEffect } from 'react';
 
 function App() {
-    const path = window.location.pathname
-
-
+  const path = window.location.pathname
   return (
     <ChakraProvider>
       <div className="App w-full overflow-hidden">
-        <div className='fixed top-0 w-full text-center bg-black text-white z-[100]'>
-          VERSION BETA v1.0.0 - UNDER DEVELOPMENT
-        </div>
+      
 
         <Router>
           <Routes>
@@ -23,7 +21,7 @@ function App() {
           </Routes>
         </Router>
 
-        <Footer/>
+        <Footer />
       </div>
     </ChakraProvider>
   );

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import movies from '../../data/movies.json'
 import CardImg from '../ui/CardImg'
-import CustomButton from '../ui/CustomButton'
+import CustomButton from '../ui/CustomButton';
+import axios from 'axios';
 
 import {
     Modal,
@@ -18,6 +19,16 @@ import { Link } from 'react-router-dom'
 
 const Archive = () => {
     const [more, setMore] = useState(false)
+    const [movies, setMovies] = useState([])
+    const getfilms = () => {
+        axios.get('http://127.0.0.1:8000/api/allfilms').then((Response) => {
+            const data_array = Response.data.data
+            setMovies(data_array)
+        }).catch((error) => console.log(error));
+    }
+    useEffect(() => {
+        getfilms();
+    }, []);
 
     const handleButton = () => {
         setMore(!more)
@@ -41,8 +52,8 @@ const Archive = () => {
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-8'>
                     {
-                        movies.slice(0, !more ? 3 : movies.length).map((item, idx) => 
-                            <CardMovie key={idx} item={item} handle={()=>handle(idx)} />
+                        movies.slice(0, !more ? 3 : movies.length).map((item) => 
+                            <CardMovie key={item.id} item={item} handle={()=>handle(item.id)} />
                         )
                     }
                 </div>
@@ -59,7 +70,7 @@ const Archive = () => {
                     <ModalHeader>
                         {selected > -1 &&
                             <div className='text-sm font-medium'>
-                                <img src={require('../../assets/img/' + movies[selected].image)} alt="" className='object-cover w-full h-[200px] rounded-lg mb-4 mt-4' />
+                                <img src={'http://127.0.0.1:8000/imgs/films/' + movies[selected].picture} alt="" className='object-cover w-full h-[200px] rounded-lg mb-4 mt-4' />
                                 <h2 className='text-2xl font-bold'>{movies[selected].title}</h2>
                                 <div className='flex item-center mt-6'>
                                     <p className='ml-2'>الاخراج:</p>
@@ -77,34 +88,13 @@ const Archive = () => {
                                     <p className='ml-2'>انتاج:</p>
                                     <p className='ml-2'>{movies[selected].product}</p>
                                 </div>
-                                <div className='flex item-center'>
-                                    <p className='ml-2'>حوار:</p>
-                                    <p className='ml-2'>{movies[selected].dialog}</p>
-                                </div>
-                                <div className='flex item-center'>
-                                    <p className='ml-2'>مدير الاخراج:</p>
-                                    <p className='ml-2'>{movies[selected]['directeur-filmer']}</p>
-                                </div>
-                                <div className='flex item-center'>
-                                    <p className='ml-2'>مدير الانتاج:</p>
-                                    <p className='ml-2'>{movies[selected]['directeur-prod']}</p>
-                                </div>
-                                <div className='flex item-center'>
-                                    <p className='ml-2'>موسيقى:</p>
-                                    <p className='ml-2'>{movies[selected].music}</p>
-                                </div>
-                                <div className='flex item-center'>
-                                    <p className='ml-2'>تركيب:</p>
-                                    <p className='ml-2'>{movies[selected].construct}</p>
-                                </div>
-                                <div className='flex item-center'>
-                                    <p className='ml-2'>صوت:</p>
-                                    <p className='ml-2'>{movies[selected].sound}</p>
-                                </div>
-                                <div className='flex item-center'>
-                                    <p className='ml-2'>ديكور:</p>
-                                    <p className='ml-2'>{movies[selected].decor}</p>
-                                </div>
+                               
+                                
+                               
+                               
+                               
+                              
+                               
                                 <div className='flex item-center'>
                                     <p className='ml-2'>تاربخ:</p>
                                     <p className='ml-2'>{movies[selected].date}</p>

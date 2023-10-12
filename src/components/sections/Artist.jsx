@@ -15,10 +15,20 @@ import {
     useDisclosure
 } from '@chakra-ui/react'
 import { Movie } from '@mui/icons-material'
+import axios from 'axios';
 
 const Artist = () => {
     const [more, setMore] = useState(6)
-
+    const [actors, setActors] = useState([])
+    const getactors = () => {
+        axios.get('http://127.0.0.1:8000/api/allactors').then((Response) => {
+            const data_array = Response.data.data
+            setActors(data_array)
+        }).catch((error) => console.log(error));
+    }
+    useEffect(() => {
+        getactors();
+    }, []);
     const [selected, setSelected] = useState(-1)
 
     const handleButton = () => {
@@ -42,9 +52,9 @@ const Artist = () => {
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-8'>
                     {
-                        artist.slice(0, more).map((item, idx) => 
-                            <div key={idx} data-aos='zoom-in' data-aos-once="true">
-                                <CardArtist key={idx} item={item} handle={()=>handle(idx)} />
+                        actors.slice(0, more).map((item) => 
+                            <div key={item.id} data-aos='zoom-in' data-aos-once="true">
+                                <CardArtist key={item.id} item={item} handle={()=>handle(item.id)} />
                             </div>
                         )
                     }

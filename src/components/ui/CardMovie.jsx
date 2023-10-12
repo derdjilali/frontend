@@ -40,7 +40,7 @@ const CardMovie = ({ item, handle}) => {
                     <CustomButton title={'عرض المزيد'} css={'px-8 py-5'} handleBtn={ handle} />
                 </div>
                 <CardImg css={'h-[450px]'}>
-                    <img src={require(`../../assets/img/${item.image}`)} className='w-full h-full object-cover' alt={item.title} />
+                    <img src={`http://127.0.0.1:8000/imgs/films/${item.picture}`} className='w-full h-full object-cover' alt={item.title} />
                 </CardImg>    
             </div>
         </div>

@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import CustomButton from '../ui/CustomButton'
 import CardImg from '../ui/CardImg'
-import movies from '../../data/movies.json'
 
+import axios from 'axios'
 import { Swiper, SwiperSlide } from 'swiper/react';
 // core version + navigation, pagination modules:
 // import Swiper and modules styles
@@ -29,8 +29,18 @@ const News = () => {
     const [selected, setSelected] = useState(-1)
     const [selectedOp, setSelectedOp] = useState(false)
 
+    const [news, setNews] = useState([]);
     const swiperRef = useRef(null);
+    const getNews = () => {
+        axios.get('http://127.0.0.1:8000/api/news').then((Response) => {
+            const data_array = Response.data.data
+            setNews(data_array)
+        }).catch((error) => console.log(error));
+    }
+    useEffect(() => {
+        getNews();
 
+    }, []);
     const handleButtonClick = (slideIndex) => {
         setSelected(slideIndex)
         swiperRef.current.swiper.slideTo(slideIndex);
@@ -66,17 +76,17 @@ const News = () => {
                         }}
                         modules={[Navigation, Pagination]}
                         className="swiper-container news"
-                        onSlideNextTransitionStart={()=>selected < movies.length  && handleButtonClick(selected + 1)}
+                        onSlideNextTransitionStart={()=>selected < news.length  && handleButtonClick(selected + 1)}
                         onSlidePrevTransitionStart={()=>selected > 0  && handleButtonClick(selected - 1)}
                     >
                         {
-                            movies.map((item, idx) => {
+                            news.map((item) => {
                                 return (
-                                    <SwiperSlide key={idx}>
+                                    <SwiperSlide key={item.id}>
                                         <CardImg
-                                            handle = {()=>handle(idx)}
-                                            item={item} css={selected!== null && selected === idx ? 'h-[500px] border border-primary-500' : 'mt-28 mx-auto brightness-[0.3] w-[250px] h-[350px] mb-0'}>
-                                            <img src={require(`../../assets/img/${item.image}`)} className='w-full h-full object-cover' alt={item.title} />
+                                            handle={()=>handle(item.id)}
+                                            item={item} css={selected!== null && selected === item.id ? 'h-[400px]' : 'mt-20 mx-auto brightness-[0.3] w-[200px] h-[280px] mb-8'}>
+                                            <img src={'http://127.0.0.1:8000/imgs/news/' + item.picture} className='w-full h-full object-cover' alt={item.title} />
                                         </CardImg>
                                     </SwiperSlide>
                                 )}
@@ -101,17 +111,17 @@ const News = () => {
                         }}
                         modules={[Navigation, Pagination]}
                         className="swiper-container"
-                        onSlideNextTransitionStart={()=>selected < movies.length  && handleButtonClick(selected + 1)}
+                        onSlideNextTransitionStart={()=>selected < news.length  && handleButtonClick(selected + 1)}
                         onSlidePrevTransitionStart={()=>selected > 0  && handleButtonClick(selected - 1)}
                     >
                         {
-                            movies.map((item, idx) => {
+                            news.map((item) => {
                                 return (
-                                    <SwiperSlide key={idx}>
+                                    <SwiperSlide key={item.id}>
                                         <CardImg
-                                            handle = {()=>handle(idx)}
-                                            item={item} css={selected!== null && selected === idx ? 'h-[400px]' : 'mt-20 mx-auto brightness-[0.3] w-[200px] h-[280px] mb-8'}>
-                                            <img src={require(`../../assets/img/${item.image}`)} className='w-full h-full object-cover' alt={item.title} />
+                                            handle = {()=>handle(item.id)}
+                                            item={item} css={selected!== null && selected === item.id ? 'h-[400px]' : 'mt-20 mx-auto brightness-[0.3] w-[200px] h-[280px] mb-8'}>
+                                            <img src={'http://127.0.0.1:8000/imgs/news/' + item.picture} className='w-full h-full object-cover' alt={item.title} />
                                         </CardImg>
                                     </SwiperSlide>
                                 )}
@@ -136,12 +146,7 @@ const News = () => {
                             <SwiperSlide>
                                 <img src={require('../../assets/img/img1.jpg')} alt="" className='w-full h-[200px] object-cover rounded-lg mb-4'/>
                             </SwiperSlide>
-                            <SwiperSlide>
-                                <img src={require('../../assets/img/img1.jpg')} alt="" className='w-full h-[200px] object-cover rounded-lg mb-4'/>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <img src={require('../../assets/img/img1.jpg')} alt="" className='w-full h-[200px] object-cover rounded-lg mb-4'/>
-                            </SwiperSlide>
+                            
                         </Swiper>
                         <h1 className='font-bold text-2xl mb-4'>رحل الفنان الجزائري الشهير محمد حلمي</h1>
                         <p className='font-light text-sm mb-6'>تاريخ: 24-09-2023</p>

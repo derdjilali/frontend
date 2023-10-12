@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 
+
 const CardArtist = ({ item , handle}) => {
     const [isHovered, setIsHovered] = useState(false);
 
@@ -22,7 +23,8 @@ const CardArtist = ({ item , handle}) => {
         >
             <div className={`absolute left-0 top-0 bottom-0 right-0`}
                 style={{
-                backgroundImage: isHovered && `url(${require('../../assets/img/' + item.image)})`,
+                    backgroundImage: isHovered
+                    && `url(http://127.0.0.1:8000/imgs/films/${item.picture})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
@@ -36,7 +38,7 @@ const CardArtist = ({ item , handle}) => {
                 <div className='border-t-2 rounded-full border-primary-500 w-[150px] mb-6'></div>
             </div>
             <p className={`text-sm text-white font-extralight text-justify transition-all duration-500 ${isHovered ? 'transform opacity-0' : 'transform-none opacity-100'}`}>
-                {item.description.substring(0,300)}...
+                {item.desc.substring(0,300)}...
             </p>
         </div>
     )
